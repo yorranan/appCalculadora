@@ -1,47 +1,45 @@
-
 ion-list {
     height: 100%;
 }
+
 ion-input {
     font-size: 50pt;
     text-align: right;
+    margin-bottom: 5%;
     margin-right: 5%;
     font-weight: lighter;
 }
+
 ion-item {
     margin: 0%;
     height: 12.5%;
 }
-ion-fab-button {
+
+ion-button {
     width: 20%;
+    height: 100%;
     margin: 0 auto;
     margin-top: 3%;
     margin-bottom: 3%;
-    font-size: 17pt;
-    --background: #6C85D1;
-    --backgorund-activated: #161A2E;
+    font-size: 1.5em;
+    --background: #333333;
+    --backgorund-activated: #333333;
+    --border-radius: 50em;
 }
+
 .operation {
-    --background: #12D3CD;
-    --backgorund-activated: #12D3CD;
+    --background: #e9a33d;
+    --backgorund-activated: #e9a33d;
 }
 
 .action {
-    --background: #000937;
-    --background-activated: #000937;
-    --color: #D9D9D9;
+    --background: #a5a5a5;
+    --background-activated: #a5a5a5;
+    --color: #050505;
 }
 
-ion-button {
-    width: 45%;
-    margin: 0 auto;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    font-size: 17pt;
-}
 #zero {
-    height: 80%;
-    --border-radius: 30pt;
-    --background: #EEEEEE;
-    --backgorund-activated: #161A2E;
+    width: 45%;
+    --background: #333333;
+    --backgorund-activated: #333333;
 }
