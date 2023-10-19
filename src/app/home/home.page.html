@@ -3,10 +3,10 @@
     <ion-item></ion-item>
     <ion-item></ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="visor"></ion-input>
+      <ion-input [(ngModel)]="visor" disabled="true"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-button class="action">
+      <ion-button class="action" (click)="zerar()">
         AC
       </ion-button >
       <ion-button class="action">
@@ -15,60 +15,60 @@
       <ion-button class="action">
         %
       </ion-button>
-      <ion-button class="operation">
+      <ion-button class="operation" (click)="addOperation(3)">
         ÷
       </ion-button>
     </ion-item>
     <ion-item>
-      <ion-button>
+      <ion-button (click)="addNumber('7')">
         7
       </ion-button>
-      <ion-button>
+      <ion-button (click)="addNumber('8')">
         8
       </ion-button>
-      <ion-button>
+      <ion-button (click)="addNumber('9')">
         9
       </ion-button>
-      <ion-button class="operation">
+      <ion-button class="operation" (click)="addOperation(2)">
         x
       </ion-button>
     </ion-item>
     <ion-item>
-      <ion-button>
+      <ion-button (click)="addNumber('4')">
         4
       </ion-button>
-      <ion-button>
+      <ion-button (click)="addNumber('5')">
         5
       </ion-button>
-      <ion-button>
+      <ion-button (click)="addNumber('6')">
         6
       </ion-button>
-      <ion-button class="operation">
+      <ion-button class="operation" (click)="addOperation(1)">
         -
       </ion-button>
     </ion-item>
     <ion-item>
-      <ion-button>
+      <ion-button (click)="addNumber('1')">
         1
       </ion-button>
-      <ion-button>
+      <ion-button (click)="addNumber('2')">
         2
       </ion-button>
-      <ion-button>
+      <ion-button (click)="addNumber('3')">
         3
       </ion-button>
-      <ion-button class="operation">
+      <ion-button class="operation" (click)="addOperation(0)">
         +
       </ion-button>
     </ion-item>
     <ion-item>
-      <ion-button id="zero">
+      <ion-button id="zero" (click)="addNumber('0')">
         0
       </ion-button>
-      <ion-button>
+      <ion-button (click)="addNumber('.')">
         ,
       </ion-button>
-      <ion-button class="operation">
+      <ion-button class="operation" (click)="calcular()">
         =
       </ion-button>
     </ion-item>
