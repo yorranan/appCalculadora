@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -12,7 +13,7 @@ export class HomePage {
   operacao!: number;
   constructor() {}
 
-  addNumber(valor: string)  {
+  addDigit(valor: string)  {
     if ((this.visor.length == 1) && (this.visor == '0')) {
       this.visor = valor;
     }
@@ -26,34 +27,44 @@ export class HomePage {
     this.valor1 = +this.visor;
   }
 
-  calcular() {
+  evaluate() {
     this.valor2 = +this.visor;
     switch(this.operacao) {
       case 0: {
-        this.zerar()
-        this.visor = "" + (this.valor1 + this.valor2);
+        this.toZero()
+        this.visor = '+' + (this.valor1 + this.valor2);
         break;
       }
       case 1: {
-        this.zerar()
-        this.visor = "" + (this.valor1 - this.valor2)
+        this.toZero()
+        this.visor = "-" + (this.valor1 - this.valor2)
         break;
       }
       case 2: {
-        this.zerar()
-        this.visor = "" + (this.valor1 * this.valor2)
+        this.toZero()
+        this.visor = "*" + (this.valor1 * this.valor2)
         break;
       }
       case 3: {
-        this.zerar()
-        this.visor = "" + (this.valor1 / this.valor2)
+        this.toZero()
+        this.visor = "/" + (this.valor1 / this.valor2)
         break;
       }
     }
   }
 
-  zerar() {
+  toZero() {
     this.visor = '0';
+  }
+
+  invertSignal() {
+    if (this.visor.charAt(0) != '0') {
+      this.visor = (+this.visor*(-1)).toString();
+    }
+  }
+
+  toPercent() {
+    this.visor = (+this.visor).toString();
   }
 }
 

@@ -3,16 +3,16 @@
     <ion-item></ion-item>
     <ion-item></ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="visor" disabled="true"></ion-input>
+      <ion-input [(ngModel)]="visor" disabled="false"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-button class="action" (click)="zerar()">
+      <ion-button class="action" (click)="toZero()">
         AC
       </ion-button >
-      <ion-button class="action">
+      <ion-button class="action" (click)="invertSignal()">
         -/+
       </ion-button>
-      <ion-button class="action">
+      <ion-button class="action" (click)="toPercent()">
         %
       </ion-button>
       <ion-button class="operation" (click)="addOperation(3)">
@@ -20,13 +20,13 @@
       </ion-button>
     </ion-item>
     <ion-item>
-      <ion-button (click)="addNumber('7')">
+      <ion-button (click)="addDigit('7')">
         7
       </ion-button>
-      <ion-button (click)="addNumber('8')">
+      <ion-button (click)="addDigit('8')">
         8
       </ion-button>
-      <ion-button (click)="addNumber('9')">
+      <ion-button (click)="addDigit('9')">
         9
       </ion-button>
       <ion-button class="operation" (click)="addOperation(2)">
@@ -34,13 +34,13 @@
       </ion-button>
     </ion-item>
     <ion-item>
-      <ion-button (click)="addNumber('4')">
+      <ion-button (click)="addDigit('4')">
         4
       </ion-button>
-      <ion-button (click)="addNumber('5')">
+      <ion-button (click)="addDigit('5')">
         5
       </ion-button>
-      <ion-button (click)="addNumber('6')">
+      <ion-button (click)="addDigit('6')">
         6
       </ion-button>
       <ion-button class="operation" (click)="addOperation(1)">
@@ -48,13 +48,13 @@
       </ion-button>
     </ion-item>
     <ion-item>
-      <ion-button (click)="addNumber('1')">
+      <ion-button (click)="addDigit('1')">
         1
       </ion-button>
-      <ion-button (click)="addNumber('2')">
+      <ion-button (click)="addDigit('2')">
         2
       </ion-button>
-      <ion-button (click)="addNumber('3')">
+      <ion-button (click)="addDigit('3')">
         3
       </ion-button>
       <ion-button class="operation" (click)="addOperation(0)">
@@ -62,13 +62,13 @@
       </ion-button>
     </ion-item>
     <ion-item>
-      <ion-button id="zero" (click)="addNumber('0')">
+      <ion-button id="zero" (click)="addDigit('0')">
         0
       </ion-button>
-      <ion-button (click)="addNumber('.')">
+      <ion-button (click)="addDigit('.')">
         ,
       </ion-button>
-      <ion-button class="operation" (click)="calcular()">
+      <ion-button class="operation" (click)="evaluate()">
         =
       </ion-button>
     </ion-item>
