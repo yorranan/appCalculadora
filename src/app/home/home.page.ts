@@ -1,4 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
+import * as math from 'mathjs';
 import { Component, numberAttribute } from '@angular/core';
 
 @Component({
@@ -8,14 +8,18 @@ import { Component, numberAttribute } from '@angular/core';
 })
 export class HomePage {
   visor: string = '0';
+  history = '';
+  isResult = false;
   valor1!: number;
   valor2!: number;
-  operacao!: number;
+  operation!: number;
   isReadOnly: boolean = true;
-  constructor() {}
+  isOperation: boolean = false;
+  constructor() { }
 
-  addDigit(valor: string)  {
-    if ((this.visor.length == 1) && (this.visor == '0')) {
+  addDigit(valor: string) {
+    if (((this.visor.length == 1) && (this.visor == '0')) || (this.isResult == true)) {
+      this.isResult = false;
       this.visor = valor;
     }
     else {
@@ -24,48 +28,55 @@ export class HomePage {
   }
 
   addOperation(valor: number) {
-    switch(valor) {
-      case 0: {
-        this.visor += '+';
-        break;
-      }
-      case 1: {
-        this.visor += '-';
-        break;
-      }
-      case 2: {
-        this.visor += '*';
-        break;
-      }
-      case 3: {
-        this.visor += '/';
-        break;
+    if(this.visor != '0') {
+      switch (valor) {
+        case 0: {
+          this.visor += '+';
+          break;
+        }
+        case 1: {
+          this.visor += '-';
+          break;
+        }
+        case 2: {
+          this.visor += '*';
+          break;
+        }
+        case 3: {
+          this.visor += '/';
+          break;
+        }
       }
     }
   }
 
   evaluate() {
-    try {
-      let result = eval(this.visor);
-      this.visor = result.toString();
-    } catch (error) {
-      console.error("Comando de expressão inválida: ", error);
-    }
+    this.history = this.visor;
+    this.visor = math.evaluate(this.visor).toString();
+    this.isResult = true;
   }
-  
+
 
   toZero() {
+    this.history = '';
     this.visor = '0';
   }
 
   invertSignal() {
-    if (this.visor.charAt(0) != '0') {
+    if (this.visor.includes('+')
+    || this.visor.includes('*')
+    || this.visor.includes('-', 1)
+    || this.visor.includes('/')) {
+      this.isOperation = true;
+    }
+    if ((this.visor.charAt(0) != '0') && !this.isOperation) {
+      console.log("hhhh")
       this.visor = (+this.visor*(-1)).toString();
     }
   }
 
   toPercent() {
-    this.visor = ((+this.visor)/100).toString();
+    this.visor = ((+this.visor) / 100).toString();
   }
 }
 

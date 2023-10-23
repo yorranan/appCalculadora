@@ -9,8 +9,6 @@ ion-input {
     text-align: right;
     margin-bottom: 5%;
     margin-right: 5%;
-    font-weight: lighter;
-    
 }
 
 ion-item {
@@ -37,8 +35,8 @@ ion-button {
 }
 
 .action {
-    --background: #db312e;
-    --background-activated: #db312e;
+    --background: #787878;
+    --background-activated: #787878;
     --color: #050505;
 }
 
@@ -46,4 +44,12 @@ ion-button {
     width: 45%;
     --background: #333333;
     --backgorund-activated: #333333;
+}
+
+#history {
+    font-size: 25pt;
+    text-align: right;
+    margin-bottom: 5%;
+    margin-right: 5%;
+    color: #858585;
 }
