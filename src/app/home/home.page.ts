@@ -11,6 +11,7 @@ export class HomePage {
   valor1!: number;
   valor2!: number;
   operacao!: number;
+  isReadOnly: boolean = true;
   constructor() {}
 
   addDigit(valor: string)  {
@@ -48,7 +49,7 @@ export class HomePage {
       let result = eval(this.visor);
       this.visor = result.toString();
     } catch (error) {
-      console.error("Error evaluating expression: ", error);
+      console.error("Comando de expressão inválida: ", error);
     }
   }
   

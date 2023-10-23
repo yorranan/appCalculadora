@@ -3,7 +3,7 @@
     <ion-item></ion-item>
     <ion-item></ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="visor" disabled="false"></ion-input>
+      <ion-input [(ngModel)]="visor" [readonly]="isReadOnly"></ion-input>
     </ion-item>
     <ion-item>
       <ion-button class="action" (click)="toZero()">
