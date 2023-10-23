@@ -1,5 +1,5 @@
 import { ThisReceiver } from '@angular/compiler';
-import { Component } from '@angular/core';
+import { Component, numberAttribute } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -23,35 +23,35 @@ export class HomePage {
   }
 
   addOperation(valor: number) {
-    this.operacao = valor;
-    this.valor1 = +this.visor;
-  }
-
-  evaluate() {
-    this.valor2 = +this.visor;
-    switch(this.operacao) {
+    switch(valor) {
       case 0: {
-        this.toZero()
-        this.visor = '+' + (this.valor1 + this.valor2);
+        this.visor += '+';
         break;
       }
       case 1: {
-        this.toZero()
-        this.visor = "-" + (this.valor1 - this.valor2)
+        this.visor += '-';
         break;
       }
       case 2: {
-        this.toZero()
-        this.visor = "*" + (this.valor1 * this.valor2)
+        this.visor += '*';
         break;
       }
       case 3: {
-        this.toZero()
-        this.visor = "/" + (this.valor1 / this.valor2)
+        this.visor += '/';
         break;
       }
     }
   }
+
+  evaluate() {
+    try {
+      let result = eval(this.visor);
+      this.visor = result.toString();
+    } catch (error) {
+      console.error("Error evaluating expression: ", error);
+    }
+  }
+  
 
   toZero() {
     this.visor = '0';
