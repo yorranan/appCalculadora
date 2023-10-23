@@ -2,7 +2,15 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+@font-face {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf');
+}
+
 :root {
+  --ion-font-family: 'Pixelify Sans';
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -232,5 +240,6 @@
     --ion-tab-bar-background: #1f1f1f;
 
     --ion-card-background: #1e1e1e;
+
   }
 }

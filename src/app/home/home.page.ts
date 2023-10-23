@@ -64,7 +64,7 @@ export class HomePage {
   }
 
   toPercent() {
-    this.visor = (+this.visor).toString();
+    this.visor = ((+this.visor)/100).toString();
   }
 }
 

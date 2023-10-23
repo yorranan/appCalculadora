@@ -1,5 +1,7 @@
 ion-list {
     height: 100%;
+    font-family: 'Pixelify Sans';
+    background-color: #000000;
 }
 
 ion-input {
@@ -18,6 +20,7 @@ ion-input :disabled {
 ion-item {
     margin: 0%;
     height: 12.5%;
+    --background: #000000;
 }
 
 ion-button {
@@ -33,13 +36,13 @@ ion-button {
 }
 
 .operation {
-    --background: #e9a33d;
-    --backgorund-activated: #e9a33d;
+    --background: #962edb;
+    --backgorund-activated: #962edb;
 }
 
 .action {
-    --background: #a5a5a5;
-    --background-activated: #a5a5a5;
+    --background: #db312e;
+    --background-activated: #db312e;
     --color: #050505;
 }
 
